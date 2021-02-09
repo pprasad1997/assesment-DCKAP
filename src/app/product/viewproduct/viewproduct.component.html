@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row" *ngIf="products.length > 0">
+    <div class="col-xs-12">
+      <h4>Products</h4>
+        <div class="list-group-item clearfix"  *ngFor="let product of products; let  i = index">
+          <div class="pull-left clearfix">
+            <h4 class="list-group-item-text"><strong>Name - </strong>{{ product.name }}</h4>
+            <h4 class="list-group-item-text"><strong>Price - </strong>{{ product.price }}</h4>
+            <h4 class="list-group-item-text"><strong>Color - </strong>{{ product.color }}</h4>
+            <h4 class="list-group-item-text"><strong>Description - </strong>{{ product.description }}</h4>
+            <h4 class="list-group-item-text"><strong>Status - </strong>{{ product.status }}</h4>
+        </div>
+        <span class="pull-right">
+            <img [src]="product.imgpath" alt="{{ product.name }}" class="img-responsive" style="width: 250px;">
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="products.length === 0">
+    <h4>No Products Added Yet !!!</h4>
+  </div>
+</div>
